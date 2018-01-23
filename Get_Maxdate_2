@@ -1,0 +1,53 @@
+def get_maxdate(dt1,dt2):
+    com_d1= 0
+    com_d2= 0
+    dt1_d = dt1.split(" ")[0].split("-")[0]
+    dt1_mo = dt1.split(" ")[0].split("-")[1]
+    dt1_y = dt1.split(" ")[0].split("-")[2]
+    dt1_h = dt1.split(" ")[1].split(":")[0]
+    dt1_m = dt1.split(" ")[1].split(":")[1]
+    dt1_s = dt1.split(" ")[1].split(":")[2]
+    dt2_d = dt2.split(" ")[0].split("-")[0]
+    dt2_mo = dt2.split(" ")[0].split("-")[1]
+    dt2_y = dt2.split(" ")[0].split("-")[2]
+    dt2_h = dt2.split(" ")[1].split(":")[0]
+    dt2_m = dt2.split(" ")[1].split(":")[1]
+    dt2_s = dt2.split(" ")[1].split(":")[2]
+    if int(dt1_y) > int(dt2_y):
+        com_d1 += 100000
+    else:
+        com_d2 += 100000
+        
+    if int(dt1_mo) > int(dt2_mo):
+        com_d1 += 10000
+    else:
+        com_d2 += 10000
+        
+    if int(dt1_d) > int(dt2_d):
+        com_d1 += 1000
+    else:
+        com_d2 += 1000
+        
+    if int(dt1_h) > int(dt2_h):
+        com_d1 += 100
+    else:
+        com_d2 += 100
+        
+    if int(dt1_m) > int(dt2_m):
+        com_d1 += 10
+    else:
+        com_d2 += 10
+        
+    if int(dt1_s) > int(dt2_s):
+        com_d1 += 1
+    else:
+        com_d2 += 1
+        
+    if com_d1 > com_d2:
+        return dt1
+    else:
+        return dt2
+    
+b1 = '22-01-2013 01:12:23'
+b2 = '22-05-2013 11:33:42'
+get_maxdate(b1,b2)
