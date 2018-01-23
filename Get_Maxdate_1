@@ -1,0 +1,12 @@
+def get_maxdate(dt1,dt2):
+    import time
+    a = time.strptime(dt1,'%d-%m-%Y %H:%M:%S')
+    b = time.strptime(dt2,'%d-%m-%Y %H:%M:%S')
+    if a > b:
+        return time.strftime('%d-%m-%Y %H:%M:%S',a)
+    else:
+        return time.strftime('%d-%m-%Y %H:%M:%S',b)
+
+b1 = '22-01-2013 01:12:23'
+b2 = '22-05-2013 11:33:42'
+get_maxdate(b1,b2)
